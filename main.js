@@ -48,18 +48,19 @@ class Horloge {
   }
 }
 
-const today = new Date();
-today_hour = today.getHours();
-today_minute = today.getMinutes();
-today_seconde = today.getSeconds();
+const TODAY = new Date();
+let today_hour = TODAY.getHours();
+let today_minute = TODAY.getMinutes();
+let today_seconde = TODAY.getSeconds();
 
-const horloge = new Horloge(today_hour, today_minute, today_seconde);
+const HORLOGE = new Horloge(today_hour, today_minute, today_seconde);
 
-const btn = document.createElement("button");
-document.body.append(btn);
-btn.textContent =
+const BTN = document.createElement("button");
+document.body.append(BTN);
+BTN.textContent =
   "21 minutes et 28 secondes plus tard (pas le film sur les zombies)";
 
-btn.addEventListener("click", (e) => {
-  horloge.go_to_future(21, 28);
+BTN.addEventListener("click", (e) => {
+  HORLOGE.go_to_future(21, 28);
 });
+console.log(BTN);
