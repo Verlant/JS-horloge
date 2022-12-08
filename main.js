@@ -13,9 +13,9 @@ class Horloge {
   /**
    * ajoute 21 minute et 28 secondes aux attributs de l'objet Horloge
    */
-  go_to_future() {
-    this.minute += 21;
-    this.seconde += 28;
+  go_to_future(min, sec) {
+    this.minute += min;
+    this.seconde += sec;
     if (this.hour > 23 || this.hour < 0) {
       this.hour = 0;
     } else if (this.minute >= 60 && this.seconde >= 60) {
@@ -28,9 +28,15 @@ class Horloge {
     } else if (this.minute > 60) {
       this.minute = this.minute - 60;
       this.hour++;
+      if (this.hour > 23 || this.hour < 0) {
+        this.hour = 0;
+      }
     } else if (this.seconde > 60) {
       this.seconde = this.seconde - 60;
       this.minute++;
+      if (this.hour > 23 || this.hour < 0) {
+        this.hour = 0;
+      }
     }
     console.log(this.hour + " : " + this.minute + " : " + this.seconde);
   }
@@ -55,5 +61,5 @@ btn.textContent =
   "21 minutes et 28 secondes plus tard (pas le film sur les zombies)";
 
 btn.addEventListener("click", (e) => {
-  horloge.go_to_future();
+  horloge.go_to_future(21, 28);
 });
