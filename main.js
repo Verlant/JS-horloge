@@ -32,6 +32,7 @@ class Horloge {
       this.seconde = this.seconde - 60;
       this.minute++;
     }
+    console.log(this.hour + " : " + this.minute + " : " + this.seconde);
   }
   /**
    * affiche les attributs de l'objet dans la console
@@ -55,5 +56,4 @@ btn.textContent =
 
 btn.addEventListener("click", (e) => {
   horloge.go_to_future();
-  horloge.print_attributs();
 });
